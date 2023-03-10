@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;700&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 
@@ -20,68 +23,85 @@
         <li>
           <h2>Category</h2>
           <div>
-            <input type="checkbox" name="defaultCategoryValue" id="default-category-value">
+            <div class="checkbox-placeholder checkbox-category">
+              <input type="checkbox" name="defaultCategoryValue" id="default-category-value">
+            </div>
             <label for="default-category-value">All</label>
           </div>
         </li>
         <li>
           <h2>Blacklist</h2>
           <div>
-            <input type="checkbox" name="defaultBlacklistValue" id="default-category-value">
+            <div class="checkbox-placeholder checkbox-blacklist">
+              <input type="checkbox" name="defaultBlacklistValue" id="default-category-value">
+            </div>
             <label for="default-blacklist-value">None</label>
           </div>
         </li>
         <li>
           <h2>Language</h2>
           <div>
-            <input type="checkbox" name="defaultLanguageValue" id="default-language-value">
+            <div class="checkbox-placeholder checkbox-language">
+              <input type="checkbox" name="defaultLanguageValue" id="default-language-value">
+            </div>
             <label for="default-category-value">English</label>
           </div>
         </li>
-        <div>
-          <figure>
-            <img src="./images/categories/christmas.png" alt="Santa hat">
-            <h3>Christmas</h3>
-          </figure>
-          <figure>
-            <img src="./images/categories/random.png" alt="question box">
-            <h3>Misc</h3>
-          </figure>
-          <figure>
-            <img src="./images/categories/programming.png" alt="laptop">
-            <h3>Programming</h3>
-          </figure>
-          <figure>
-            <img src="./images/categories/dark.png" alt="blackhooded skull">
-            <h3>Dark</h3>
-          </figure>
-          <figure>
-            <img src="./images/categories/pun.png" alt="smiley face">
-            <h3>Pun</h3>
-          </figure>
-          <figure>
-            <img src="./images/categories/spooky.png" alt="pumkin face">
-            <h3>Spooky</h3>
-          </figure>
-        </div>
+      </menu>
+
+      <div id="figures-box">
+        <figure>
+          <img src="./images/categories/christmas.png" alt="Santa hat">
+          <h3>Christmas</h3>
+          <div></div>
+        </figure>
+        <figure>
+          <img src="./images/categories/random.png" alt="question box">
+          <h3>Misc</h3>
+          <div></div>
+        </figure>
+        <figure>
+          <img src="./images/categories/programming.png" alt="laptop">
+          <h3>Programming</h3>
+          <div></div>
+        </figure>
+        <figure>
+          <img src="./images/categories/dark.png" alt="blackhooded skull">
+          <h3>Dark</h3>
+          <div></div>
+        </figure>
+        <figure>
+          <img src="./images/categories/pun.png" alt="smiley face">
+          <h3>Pun</h3>
+          <div></div>
+        </figure>
+        <figure>
+          <img src="./images/categories/spooky.png" alt="pumkin face">
+          <h3>Spooky</h3>
+          <div></div>
+        </figure>
+      </div>
     </section>
     <section>
-      <div>
+      <form action="">
         <div id="jokes-criteria">
-          <label for="search-joke-input">Jokes containing...</label>
-          <input type="text" name="jokesSearchInput" id="jokes-search-input">
-        </div>
-        <div>
-          <label for="jokes-count-input">How many Jokes?</label>
-          <input type="text" name="jokesCountInput" id="jokes-count-input">
-        </div>
-        <div>
-          <label for="jokes-available-input">Jokes Available</label>
-          <input type="text" name="jokesAvailableInput" id="jokes-available-input">
+          <div>
+            <label for="search-joke-input">Jokes containing...</label>
+            <input type="text" name="jokesSearchInput" id="jokes-search-input">
+          </div>
+          <div>
+            <label for="jokes-count-input">How many Jokes?</label>
+            <input type="text" name="jokesCountInput" id="jokes-count-input">
+          </div>
+          <div>
+            <label for="jokes-available-input">Jokes Available</label>
+            <input type="text" name="jokesAvailableInput" id="jokes-available-input">
+          </div>
         </div>
         <div id="get-jokes-criteria">
           <input type="submit" value="Get Joke">
         </div>
+      </form>
     </section>
   </main>
 </body>
