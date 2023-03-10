@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #00b894;
+}
+
+h1 {
+  height: 60px;
+  text-align: center;
+  padding-top: 10px;
+  color: #fab1a0;
+  background-color: #6c5ce7;
+}
+
+menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+menu li h2 {
+  font-family: "Mitr", sans-serif;
+  font-weight: bold;
+  text-shadow: 3px 1px 2px black;
+}
+/*category font color */
+menu li:nth-child(1) h2 {
+  color: #ffeaa7;
+  text-shadow: 3px 1px 2px black;
+}
+
+menu li:nth-child(2) h2 {
+  color: #ff7675;
+  text-shadow: 3px 1px 2px black;
+}
+menu li:nth-child(3) h2 {
+  color: #a29bfe;
+  text-shadow: 3px 1px 2px black;
+}
+
+menu li input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+
+menu li input[type="checkbox"]:checked {
+  outline: 2px solid white;
+}
+
+/*The parent checkbox-placeholder class */
+div.checkbox-placeholder {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+div.checkbox-placeholder::before {
+  content: "";
+  position: absolute;
+  z-index: auto;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+div.checkbox-category::before {
+  background-color: #ebbc27;
+}
+
+div.checkbox-blacklist::before {
+  background-color: #ff4000;
+}
+div.checkbox-language::before {
+  background-color: #665dde;
+}
+
+menu li label {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Mitr", sans-serif;
+  color: whitesmoke;
+}
+
+div#figures-box {
+  display: flex;
+  gap: 5px;
+  background-color: #74b9ff;
+}
+
+div#figures-box figure {
+  position: relative;
+  flex-basis: 150px;
+  flex-grow: 1;
+  background-color: #0984e3;
+}
+
+div#figures-box figure img {
+  width: 100%;
+  /*Don't grow beyond the intrinsic value of img.*/
+  max-width: 128px;
+}
+
+div#figures-box figure h3 {
+  text-align: center;
+  color: #ffeaa7;
+}
+
+#figures-box figure div.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #74b9ff;
+  opacity: 70%;
+}
+
+#jokes-criteria {
+  display: flex;
+}
+
+#jokes-criteria label {
+  display: block;
+}
