@@ -89,7 +89,9 @@ menu li label {
 
 div#figures-box {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
+  border: 5px solid #74b9ff;
   background-color: #74b9ff;
 }
 
@@ -97,10 +99,13 @@ div#figures-box figure {
   position: relative;
   flex-basis: 150px;
   flex-grow: 1;
+  padding: 20px;
   background-color: #0984e3;
 }
 
 div#figures-box figure img {
+  display: block;
+  margin: 0 auto;
   width: 100%;
   /*Don't grow beyond the intrinsic value of img.*/
   max-width: 128px;
@@ -109,6 +114,7 @@ div#figures-box figure img {
 div#figures-box figure h3 {
   text-align: center;
   color: #ffeaa7;
+  margin-top: 10px;
 }
 
 #figures-box figure div.overlay {
