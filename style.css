@@ -1,14 +1,23 @@
+@font-face {
+  font-family: "Nerd Fonts";
+  src: url(./fonts/Symbols-2048-em\ Nerd\ Font\ Complete.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 16px;
+}
+
 body {
   background-color: #00b894;
 }
 
-h1 {
+header h1 {
   height: 60px;
   text-align: center;
   padding-top: 10px;
@@ -16,8 +25,17 @@ h1 {
   background-color: #6c5ce7;
 }
 
+main {
+  margin: 0 10px;
+}
+
+section {
+  margin: 20px 0;
+}
+
 menu {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   gap: 40px;
 }
@@ -25,27 +43,26 @@ menu {
 menu li h2 {
   font-family: "Mitr", sans-serif;
   font-weight: bold;
+  font-size: 24px;
   text-shadow: 3px 1px 2px black;
 }
 /*category font color */
 menu li:nth-child(1) h2 {
   color: #ffeaa7;
-  text-shadow: 3px 1px 2px black;
 }
 
 menu li:nth-child(2) h2 {
   color: #ff7675;
-  text-shadow: 3px 1px 2px black;
 }
 menu li:nth-child(3) h2 {
   color: #a29bfe;
-  text-shadow: 3px 1px 2px black;
 }
 
 menu li input[type="checkbox"] {
   width: 30px;
   height: 30px;
   opacity: 0.5;
+  cursor: pointer;
 }
 
 menu li input[type="checkbox"]:checked {
@@ -101,6 +118,7 @@ div#figures-box figure {
   flex-grow: 1;
   padding: 20px;
   background-color: #0984e3;
+  cursor: pointer;
 }
 
 div#figures-box figure img {
@@ -129,8 +147,98 @@ div#figures-box figure h3 {
 
 #jokes-criteria {
   display: flex;
+  gap: 45px;
+}
+
+#jokes-criteria div {
+  flex-basis: 300px;
 }
 
 #jokes-criteria label {
   display: block;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Mitr", sans-serif;
+  text-shadow: 2px 2px 5px black;
+  color: #d4ecff;
+}
+
+#jokes-criteria div.search-icon-box {
+  position: relative;
+}
+/*This div wraps around my input in order to put icon in*/
+#jokes-criteria div.search-icon-box::before {
+  content: "\f002";
+  position: absolute;
+  font-family: "Nerd Fonts";
+  font-size: 35px;
+  width: 45px;
+  height: 45px;
+  top: 0;
+  left: 5px;
+}
+
+#jokes-criteria input[type="text"] {
+  height: 45px;
+  font-family: "Mitr", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  background-color: #81ecec;
+  color: #2d3436;
+}
+
+#jokes-search-input {
+  width: 100%;
+  padding-left: 55px;
+}
+
+#jokes-count-input,
+#jokes-available-input {
+  width: 50%;
+  text-align: center;
+}
+
+#get-jokes-criteria {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#get-jokes-criteria input {
+  align-content: center;
+  color: #ffffff;
+  font-size: 35px;
+  font-family: "Mitr", sans-serif;
+  background-color: #6c5ce7;
+  border-radius: 0.5em;
+
+  height: 60px;
+  width: 300px;
+  cursor: pointer;
+}
+
+@media (width < 745px) {
+  #jokes-criteria label {
+    font-size: 18px;
+  }
+}
+
+@media (width < 580px) {
+  menu {
+    justify-content: space-around;
+    gap: 5px;
+  }
+  #jokes-criteria {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #jokes-criteria div:nth-child(2),
+  #jokes-criteria div:nth-child(3) {
+    flex-basis: 150px;
+    flex-grow: 1;
+  }
+
+  #get-jokes-criteria input {
+    width: 80%;
+  }
 }
