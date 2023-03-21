@@ -1,26 +1,28 @@
-//get categories and blacklistFlags
-const jokeApiInfo = fetch("https://v2.jokeapi.dev/info")
-//handle the fulfilled promise whose value will be a response value
-jokeApiInfo.then(function (response) {
-  return response.json()
-}) //second then gets the info from the body
+import getJokeInfo from "./modules/jokeInfo.js"
+const figuresBox = document.querySelector("#figures-box")
+getJokeInfo()
   .then(function (jokeInfo) {
-    //store categories, blacklistFlags, languages
-    const { categories, flags, safeJokes: languageObjects } = jokeInfo.jokes
+    //we need to display the supported categories
+    jokeInfo.categories.forEach(function (element, index, array) {
+      console.log(element)
+      if (element === "Any") {
+        return null
+      }
+      //create a figure element.
+      const figure = document.createElement("figure")
+      //create three children elements, which will be contained in figure. Img, h3, div
+      const img = document.createElement("img");
+      const h3 = document.createElement("h3");
+      const div = document.createElement("div");
+      // Add attributes or and/or content to the children
+      img.src = `./images/categories/${element}.png`
+      h3.textContent = `${element}`
+      //insert afterbegin to figure with the three children elements inside of it.
+      figure.insertAdjacentElement("beforeend", img)
+      figure.insertAdjacentElement("beforeend", h3)
+      figure.insertAdjacentElement("beforeend", div)
+      figuresBox.insertAdjacentElement("beforeend", figure)
 
-    const languageTable = {
-      en: "English",
-      cs: "Czech",
-      de: "German",
-      es: "Spanish",
-      fr: "French",
-      pt: "Portuguese",
-    }
-    //contains the supported languages
-    const languages = languageObjects.map(function (element, index) {
-      return languageTable[element.lang];
+
     })
-
   })
-
-
